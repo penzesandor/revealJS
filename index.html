@@ -88,6 +88,13 @@
 				</section>
 
 				<section data-background="#4d7e65">
+					<h3>Compiling</h3>
+					<pre><code class="hljs" data-trim>
+						java -jar SoyToJsSrcCompiler.jar --outputPathFormat simple.js --srcs simple.soy
+					</code></pre>
+				</section>
+
+				<section data-background="#4d7e65">
 					<h2>simple.js</h2>
 					<pre><code class="hljs" data-trim contenteditable>
 					/**
@@ -109,7 +116,7 @@
 
 				<section data-background="#4d7e65">
 					<h2>simple.html</h2>
-					<img width="702" data-src="helloWorld.png" alt="html_example">
+					<img width="702" data-src="assets/helloWorld.png" alt="html_example">
 				</section>
 
 				<section data-background="#4d7e65">
@@ -117,7 +124,82 @@
 					<p>parameters, calling templates, etc.</p>
 				</section>
 
+			</section>
 
+			<section>
+				<section>
+					<h2>Basic types</h2>
+					<img width="702" data-src="assets/basicTypes.png" alt="Basic types">
+				</section>
+				<section>
+					<h2>Type conversion</h2>
+					<img width="702" data-src="assets/typeConversion.png" alt="Type coversion">
+				</section>
+			</section>
+
+			<section>
+				<h2>Operators</h2>
+				<ul>
+					<li> <code>- (unary) not</code></li>
+					<li> <code>*  /  %</code></li>
+					<li> <code>+  - (binary)</code></li>
+					<li> <code> <   >   <=   >=</code></li>
+					<li> <code>==   !=</code></li>
+					<li> <code>==   !=</code></li>
+					<li> <code>and</code></li>
+					<li> <code>or</code></li>
+					<li> <code>?: (binary)   ? : (ternary)</code></li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Commands</h2>
+				<ul>
+					<li>namespace</li>
+					<li>template</li>
+					<li>@param</li>
+					<li>if, elseif, else</li>
+					<li>switch, case, default</li>
+					<li>foreach, ifempty</li>
+					<li>for</li>
+					<li>call, param</li>
+					<li>...</li>
+				</ul>
+			</section>
+
+			<section data-background="#b5533c">
+				<section>
+					<h2>Delegate templates</h2>
+					<p>Delegate templates allow you to write multiple implementations of a template and choose one of them at render time. </p>
+				</section>
+				<section>
+					<img width="702" data-src="assets/delegateTemplates.png" alt="delegate templates">
+				</section>
+				<section>
+					<h2>MVT examples</h2>
+					<img width="150" data-src="assets/dt3_1.png" alt="MVT delegate templates">
+					<img width="500" data-src="assets/dt2.png" alt="MVT delegate templates">
+					<img width="600" data-src="assets/dt1.png" alt="MVT delegate templates">
+				</section>
+				<section>
+					<img width="400" data-src="assets/dt3.png" alt="MVT delegate templates">
+				</section>
+				<section>
+					<ul>
+						<h2>Drawback</h2>
+						<li>Templates for every variant</li>
+						<li>Risk of too many overlapping MVTs</li>
+					</ul>
+				</section>
+				<section>
+					<h2>JS, CSS parameters</h2>
+					<img width="700" data-src="assets/dt4e.png" alt="MVT delegate templates">
+				</section>
+			</section>
+
+			<section data-background="#649fe3">
+				<h2>Questions?</h2>
+				<p class="fragment">Thank you for your time and have a nice day.</p>
 			</section>
 		</div>
 	</div>
@@ -130,11 +212,16 @@
 		// - https://github.com/hakimel/reveal.js#configuration
 		// - https://github.com/hakimel/reveal.js#dependencies
 		Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
 			dependencies: [
 				{ src: 'plugin/markdown/marked.js' },
 				{ src: 'plugin/markdown/markdown.js' },
 				{ src: 'plugin/notes/notes.js', async: true },
-				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+                { src: 'plugin/zoom-js/zoom.js', async: true }
 			]
 		});
 	</script>
